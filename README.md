@@ -1,1 +1,149 @@
 # PostTest4PBO
+
+    NAMA     : Christian Amsal Asimaro Lumban Tobing
+    NIM      : 2409116053
+
+# A. DESKRIPSI SINGKAT
+Hasil Pengerjaan PostTest dengan Tema _**"Manajemen Daftar Komik Online"**_ merupakan sebuah Aplikasi Manajemen Komik berbasis Teks dengan membuat 3 Package untuk menjalankan programnya yaitu :
+1. Package Model {_'SuperClass.java', 'ManhwaData.java' & 'ManhuaData.java'_} (Sebagai tempat atribut dan constructor)
+2. Package Service {_'InteractManhwa/Manhua.java'_} (CRUD: tambah, tampil, update, hapus & tambahan fitur Search)
+menerapkan konsep CRUD (Create, Read, Update, Delete) yang dimana memungkinkan pengguna untuk :
+- Menambah Data Manhwa
+- Melihat Daftar Manhwa
+- Mengubah Data Manhwa
+- Menghapus Data Manhwa.
+3. Package Main {_'Main.java'_} (Sebagai Menu Utama Program)
+
+# B. DESKRIPSI CLASS
+1. SuperClass (Superclass)
+  - untuk menyimpan atribut umum seperti title (judul), author, status.
+  - Menerapkan Encapsulation (getter & setter).
+  - Membuat Method showInfoManhwa/Manhua() untuk menampilkan informasi umum publikasi.
+2. ManhwaData (Subclass dari SuperClass)
+  - Tambahan atribut Seperti chapter, genre.
+  - Override method showInfoManhwa/Manhua() untuk menampilkan detail lebih lengkap.
+3. ManhuaData (Subclass dari SuperClass)
+  - Struktur sama seperti ManhwaData, tapi digunakan untuk komik Manhua.
+4. InteractManhwa/Manhua (Service)
+  - Menyediakan fitur CRUD:
+      - Add Untuk menambah data manhwa baru.
+      - Show untuk menampilkan seluruh daftar manhwa.
+      - Update untuk mengubah data berdasarkan nomor manhwa.
+      - Delete untuk menghapus data dari daftar.
+      - Search untuk mencari manhwa berdasarkan judul.
+  - Menggunakan ArrayList untuk menyimpan data.
+5. Main (Program Utama)
+  - Menyediakan menu interaktif.
+  - Memanggil service CRUD dari InteractManhwa/Manhua.
+  - Menambahkan Tampilkan data ManhuaData.
+
+# ALUR PROGRAM
+1. User menjalankan File Main.java.
+2. Menu ditampilkan:
+   - Tambah Manhwa
+   - tampilkan List Manhwa
+   - update Manhwa
+   - hapus Manhwa
+   - cari manhwa.
+   - Lihat data Manhua yang ada.
+3. Program berjalan secara berulang, sampai user memilih keluar.
+
+# PENJELASAN ENCAPSULATION, INHERITANCE DAN OVERRIDING
+## ENCAPSULATION
+Menggunakan Encapsulation dengan mengatur semua atribut bersifat Private, yang dimana akses data hanya bisa dilakukan dengan Getter & Setter.
+## INHERITANCE
+Membuat file java baru (SuperClass) untuk mengaturnya menjadi file Superclass yang dimana file ManhwaData.java dan ManhuaData.java menjadi subclass yang mewarisi atribut dan method dari superclass (SuperClass.java).
+## OVERRIDING
+Membuat method showInfoManhwa/Manhua di SuperClass.java dioverride oleh ManhwaData.java dan ManhuaData.java agar dapat menampilkan info tambahan dari SuperClass.java
+
+# OUTPUT
+
+<img width="264" height="515" alt="image" src="https://github.com/user-attachments/assets/28b72345-0c4f-4dd9-9048-6413fbc0ae31" />
+
+Menampilkan List Manhwa
+
+<img width="398" height="243" alt="image" src="https://github.com/user-attachments/assets/9181c1e3-cddf-428e-a70b-b6ca427b5909" />
+
+Menampilkan List Manhua
+
+# PENERAPAN ABSTRACTION & POLYMORPHISM
+## ABSTRACTION
+```java
+public abstract class SuperClass {
+```
+```java
+  public abstract void infoTambahanKomik();
+```
+Penjelasan :
+  - Class SuperClass didefinisikan menjadi class Abstrak
+  - Menambahkan Abstract void infoTambahanKomik() yang isinya kosong.
+  - Method abstract ini membuat setiap class turunan seperti ManhuaData dan ManhwaData untuk harus mengimplementasikan method infoTambahanKomik();
+
+## POLYMORPHISM
+### OVERLOADING
+```java
+    public void searchManhwa() {
+        System.out.print("Masukkan Judul Manhwa yang ingin dicari : ");
+        String keyWord = input.nextLine().toLowerCase();
+
+        boolean found = false;
+        for (ManhwaData number : daftarManhwa) {
+            if (number.getTitle().toLowerCase().contains(keyWord)) {
+                System.out.println("==================================");
+                number.showInfoManhwaManhua();
+                System.out.println("==================================");
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Manhwa dengan Judul " + keyWord + " tidak ditemukan");
+        }
+    }
+    
+    public void searchManhwa(String title, String author) {
+        boolean found = false;
+        System.out.println("Mencari Manhwa yang Berjudul " + title + " dan yang authornya " + author);
+        for (ManhwaData number : daftarManhwa) {
+            if (number.getTitle().equalsIgnoreCase(title) && number.getAuthor().equalsIgnoreCase(author)) {
+                System.out.println("==================================");
+                number.showInfoManhwaManhua();
+                System.out.println("==================================");
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Manhwa dengan Judul " + title + " dan author " + author +" tidak ditemukan");
+        }
+    }
+```
+Penjelasan :
+  - awalnya sudah ada method searchManhwa() yang mencari berdasarkan judul yang di cari.
+  - ditambahkan method searchManhwa(String title, String author) untuk mencari manhwa berdasarkan judul dan author.
+  - dan pada saat program dijalankan, yang muncul adalah method searchManhwa(String title, String author).
+
+### OVERRIDING
+```java
+    @Override
+    public void infoTambahanKomik() {
+        System.out.println("Ini adalah Manhwa " + getTitle() + "dengan " + chapter + "Chapter");
+```
+```java
+    @Override
+    public void infoTambahanKomik() {
+        System.out.println("Ini adalah Manhua " + getTitle() + "dengan " + chapter + " Chapter");
+```
+Penjelasan :
+  - karena pada file SuperClass memakai abstract method infoTambahanKomik(), maka subclass harus mengimplementasikan method tersebut.
+  - di implementasikan di dalam masing masing file ManhuaData dan ManhwaData.
+
+# Output
+
+<img width="442" height="274" alt="image" src="https://github.com/user-attachments/assets/7462cb18-f10a-4635-b809-f8b4ca7d2edb" />
+
+- Seperti pada penjelasan OVERLOADING, yang muncul adalah search dengan berdasarkan Judul dan Author nya.
+
+<img width="337" height="236" alt="image" src="https://github.com/user-attachments/assets/1f8a6455-b831-458a-aec2-56a89a7746bd" />
+
+- Seperti pada penjelasan OVERRIDING, maka menunjukkan hasil yang sudah di override sebelumnya.
