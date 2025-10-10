@@ -138,17 +138,6 @@ Penjelasan :
   - karena pada file SuperClass memakai abstract method infoTambahanKomik(), maka subclass harus mengimplementasikan method tersebut.
   - di implementasikan di dalam masing masing file ManhuaData dan ManhwaData.
 
-# Output
-
-<img width="509" height="396" alt="Screenshot 2025-10-10 130214" src="https://github.com/user-attachments/assets/18eead9e-54b4-4f10-9bbc-85d8a26b2bfd" />
-
-<img width="665" height="258" alt="Screenshot 2025-10-10 130228" src="https://github.com/user-attachments/assets/642cfd58-c0c1-40dc-87e2-2007c469ed15" />
-
-<img width="510" height="289" alt="Screenshot 2025-10-10 130305" src="https://github.com/user-attachments/assets/c370653c-86ba-4add-9dd0-b2f414d98813" />
-
-<img width="505" height="224" alt="Screenshot 2025-10-10 130317" src="https://github.com/user-attachments/assets/ccab2734-5134-4b7a-b813-2ec32998b19c" />
-
-<img width="633" height="380" alt="Screenshot 2025-10-10 130327" src="https://github.com/user-attachments/assets/ec9394b5-3f87-460c-9bc5-ba1644288de5" />
 
 
 
