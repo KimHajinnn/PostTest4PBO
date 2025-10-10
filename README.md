@@ -140,10 +140,15 @@ Penjelasan :
 
 # Output
 
-<img width="442" height="274" alt="image" src="https://github.com/user-attachments/assets/7462cb18-f10a-4635-b809-f8b4ca7d2edb" />
+<img width="509" height="396" alt="Screenshot 2025-10-10 130214" src="https://github.com/user-attachments/assets/18eead9e-54b4-4f10-9bbc-85d8a26b2bfd" />
 
-- Seperti pada penjelasan OVERLOADING, yang muncul adalah search dengan berdasarkan Judul dan Author nya.
+<img width="665" height="258" alt="Screenshot 2025-10-10 130228" src="https://github.com/user-attachments/assets/642cfd58-c0c1-40dc-87e2-2007c469ed15" />
 
-<img width="337" height="236" alt="image" src="https://github.com/user-attachments/assets/1f8a6455-b831-458a-aec2-56a89a7746bd" />
+<img width="510" height="289" alt="Screenshot 2025-10-10 130305" src="https://github.com/user-attachments/assets/c370653c-86ba-4add-9dd0-b2f414d98813" />
 
-- Seperti pada penjelasan OVERRIDING, maka menunjukkan hasil yang sudah di override sebelumnya.
+<img width="505" height="224" alt="Screenshot 2025-10-10 130317" src="https://github.com/user-attachments/assets/ccab2734-5134-4b7a-b813-2ec32998b19c" />
+
+<img width="633" height="380" alt="Screenshot 2025-10-10 130327" src="https://github.com/user-attachments/assets/ec9394b5-3f87-460c-9bc5-ba1644288de5" />
+
+
+
